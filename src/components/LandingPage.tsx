@@ -8,8 +8,6 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleCreateRoom = () => {
-    // Generate a random room ID or let the backend handle it
-    // const generatedRoomId = Math.random().toString(36).substring(2, 12);
     const generatedRoomId = uuid();
     console.log("the generated uuid ", generatedRoomId)
     navigate(`/home/${generatedRoomId}`);
@@ -18,18 +16,6 @@ const LandingPage = () => {
   const handleJoinRoom = () => {
     if (roomId.trim()) {
       navigate(`/home/${roomId}`);
-    }
-  };
-
-  const handleJoinByLink = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const linkRoomId = urlParams.get('roomId');
-    console.log("ths is kinkroomid", linkRoomId)
-    
-    if (linkRoomId) {
-      navigate(`/home/${linkRoomId}`);
-    } else {
-      alert('No room ID found in the link. Please enter a room ID manually.');
     }
   };
 
@@ -89,7 +75,7 @@ const LandingPage = () => {
                   placeholder="Enter Room ID"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 />
-                <button
+                {/* <button
                   onClick={handleJoinRoom}
                   disabled={!roomId.trim()}
                   className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full ${
@@ -97,11 +83,11 @@ const LandingPage = () => {
                   }`}
                 >
                   <ArrowRight size={18} />
-                </button>
+                </button> */}
               </div>
               
               <button
-                onClick={handleJoinByLink}
+                onClick={handleJoinRoom}
                 className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-4 rounded-lg transition-all"
               >
                 <span>Join via Shared Link</span>

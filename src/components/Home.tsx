@@ -51,12 +51,12 @@ export default function App() {
                 container: meetingContainerRef.current,
                 sharedLinks: [
                     {
-                        name: "Invite link",
-                        url:
-                            window.location.protocol +
-                            "//" +
-                            window.location.host +
-                            window.location.pathname 
+                        name: "Invite Room Id",
+                        url: window.location.pathname.replace("/home/", ""), 
+                            // window.location.protocol +
+                            // "//" +
+                            // window.location.host +
+                            // window.location.pathname 
                             // "/roomID=" +
                             // roomID,
                     },
