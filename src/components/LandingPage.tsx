@@ -90,7 +90,7 @@ const LandingPage = () => {
                 onClick={handleJoinRoom}
                 className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-4 rounded-lg transition-all"
               >
-                <span>Join via Shared Link</span>
+                <span>Join via Room ID</span>
               </button>
             </div>
             
