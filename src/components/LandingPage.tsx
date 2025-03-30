@@ -24,6 +24,7 @@ const LandingPage = () => {
   const handleJoinByLink = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const linkRoomId = urlParams.get('roomId');
+    console.log("ths is kinkroomid", linkRoomId)
     
     if (linkRoomId) {
       navigate(`/home/${linkRoomId}`);
